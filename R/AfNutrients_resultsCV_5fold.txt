@@ -1,0 +1,58 @@
+Results of Cross-validation:
+
+Variable: P
+         ME      MAE     RMSE R.squared  logRMSE logR.squared
+1 -1.773969 15.54863 42.78841 0.1152837 1.003972    0.2925446
+
+Variable: P.B
+           ME      MAE     RMSE R.squared  logRMSE logR.squared
+1 -0.07111983 5.293371 15.22383 0.5819213 0.755988    0.5676112
+
+Variable: P.T
+          ME      MAE     RMSE R.squared   logRMSE logR.squared
+1 -0.7303493 84.08686 284.9321 0.8562323 0.6857796    0.7753169
+
+Variable: N
+         ME      MAE     RMSE R.squared   logRMSE logR.squared
+1 -2.577631 261.2272 558.9273 0.6554741 0.7883113    0.8779196
+
+Variable: K
+         ME      MAE     RMSE R.squared   logRMSE logR.squared
+1 -4.077656 93.72718 201.4232 0.6199175 0.6843284     0.709551
+
+Variable: Ca
+         ME      MAE     RMSE R.squared   logRMSE logR.squared
+1 -16.70237 708.7811 1950.576 0.6936486 0.6948394    0.8048643
+
+Variable: Mg
+         ME     MAE     RMSE R.squared  logRMSE logR.squared
+1 -5.225093 132.687 241.8327 0.7808578 0.678285    0.7597886
+
+Variable: Na
+         ME     MAE     RMSE R.squared  logRMSE logR.squared
+1 -7.090573 93.6587 452.1463  0.606603 1.015416    0.6231551
+
+Variable: B
+           ME       MAE      RMSE R.squared   logRMSE logR.squared
+1 -0.01082785 0.1768701 0.4694586 0.4161591 0.1605196    0.6040176
+
+Variable: Fe
+          ME     MAE     RMSE R.squared   logRMSE logR.squared
+1 -0.8390471 32.4469 53.37723 0.6787617 0.3820237    0.8397381
+
+Variable: Mn
+         ME     MAE     RMSE R.squared   logRMSE logR.squared
+1 -1.055935 41.5503 68.81492 0.5269769 0.5876751    0.6518489
+
+Variable: Zn
+          ME      MAE     RMSE R.squared   logRMSE logR.squared
+1 -0.1310445 1.699119 4.022976 0.4732053 0.4298928    0.6273806
+
+Variable: Cu
+           ME       MAE    RMSE R.squared   logRMSE logR.squared
+1 -0.03797298 0.8536484 2.11974 0.5365185 0.3204058    0.6444803
+
+Variable: Al
+         ME      MAE     RMSE R.squared   logRMSE logR.squared
+1 -1.026342 121.6737 171.4962 0.8360022 0.2295828    0.8541826
+

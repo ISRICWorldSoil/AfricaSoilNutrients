@@ -1,0 +1,1753 @@
+Results of model fitting 'randomForest / XGBoost':
+
+
+Variable: C
+Ranger result
+
+Call:
+ ranger(formulaString.lst[[j]], data = dfs, importance = "impurity",      write.forest = TRUE, mtry = t.mrfX$bestTune$mtry, num.trees = 85) 
+
+Type:                             Regression 
+Number of trees:                  85 
+Sample size:                      76033 
+Number of independent variables:  194 
+Mtry:                             55 
+Target node size:                 5 
+Variable importance mode:         impurity 
+OOB prediction error:             68405733 
+R squared:                        0.6758018 
+
+ Variable importance:
+                                        [,1]
+DEPTH                           1.886505e+12
+M_listeNov_D                    5.446530e+11
+PHIHOX_M                        4.801623e+11
+MTWI_AF_250m                    4.622224e+11
+DEM100m                         4.062206e+11
+CHELSA_prec_4_1979_2013         3.876281e+11
+M_listeNovDec                   3.489153e+11
+CHELSA_prec_11_1979_2013        3.146643e+11
+M_listeDec_D                    2.697113e+11
+TPISRT6                         2.245080e+11
+Landsat2014_red                 2.182474e+11
+POSSRT6                         1.980842e+11
+CHELSA_prec_1979_2013_land      1.915685e+11
+M_listeOct_N                    1.860729e+11
+MODCF_seasonality_concentration 1.787926e+11
+CHELSA_prec_5_1979_2013         1.746197e+11
+M_listeMayJun                   1.736318e+11
+SKY_WV_M_JanFeb_10km            1.607980e+11
+Landsat2014_SWIR2               1.545487e+11
+SD_listeMarApr                  1.538432e+11
+SKY_WV_M_NovDec_10km            1.351269e+11
+M_listeMarApr                   1.316318e+11
+MODCF_monthlymean_04            1.261325e+11
+CHELSA_prec_12_1979_2013        1.248899e+11
+Landsat2000_NIR                 1.246057e+11
+
+eXtreme Gradient Boosting 
+
+76033 samples
+  194 predictors
+
+No pre-processing
+Resampling: Cross-Validated (3 fold, repeated 1 times) 
+Summary of sample sizes: 50689, 50688, 50689 
+Resampling results across tuning parameters:
+
+  eta  max_depth  nrounds  RMSE       Rsquared 
+  0.3  2           50      10976.100  0.4332647
+  0.3  2          100      10465.304  0.4838680
+  0.3  3           50      10011.960  0.5272178
+  0.3  3          100       9516.704  0.5708987
+  0.4  2           50      10819.619  0.4469513
+  0.4  2          100      10313.789  0.4969775
+  0.4  3           50       9923.728  0.5329535
+  0.4  3          100       9374.270  0.5824495
+
+Tuning parameter 'gamma' was held constant at a value of 0
+Tuning parameter 'colsample_bytree'
+ was held constant at a value of 0.8
+Tuning parameter 'min_child_weight' was held constant at
+ a value of 1
+RMSE was used to select the optimal model using  the smallest value.
+The final values used for the model were nrounds = 100, max_depth = 3, eta = 0.4, gamma =
+ 0, colsample_bytree = 0.8 and min_child_weight = 1. 
+
+ XGBoost variable importance:
+                                           Feature        Gain       Cover   Frequence
+ 1:                                          DEPTH 0.164671155 0.056296105 0.090510949
+ 2:                        CHELSA_prec_4_1979_2013 0.091040279 0.010361048 0.011678832
+ 3:                                        DEM100m 0.069856139 0.043575551 0.043795620
+ 4:                                   M_listeNov_D 0.055145636 0.014704127 0.008759124
+ 5:                       CHELSA_prec_11_1979_2013 0.051362745 0.007437662 0.011678832
+ 6:                     CHELSA_prec_1979_2013_land 0.043426865 0.018780479 0.018978102
+ 7:                                  M_listeMarApr 0.039217353 0.006705567 0.007299270
+ 8:                                       PHIHOX_M 0.036319297 0.041043663 0.058394161
+ 9:                                   M_listeDec_N 0.029317129 0.002026580 0.007299270
+10:                                   MTWI_AF_250m 0.027511634 0.014988215 0.013138686
+11:                        CHELSA_prec_8_1979_2013 0.024023082 0.006631783 0.005839416
+12:                                    dens_CU_5km 0.021219781 0.015362000 0.014598540
+13:                                        TPISRT6 0.016185624 0.014787030 0.013138686
+14:                        CHELSA_prec_5_1979_2013 0.015952564 0.018748387 0.013138686
+15:                                   M_listeMar_D 0.015756742 0.004841986 0.004379562
+16:                                   M_listeOct_N 0.015650616 0.010977580 0.010218978
+17: average_soil_and_sedimentary_deposit_thickness 0.013455713 0.002930225 0.002919708
+18:                                   M_listeSep_N 0.010912007 0.009554730 0.007299270
+19:                                   M_listeOct_D 0.010623830 0.004213749 0.005839416
+20:                                    dens_MN_5km 0.009161865 0.005598589 0.010218978
+21:                              Landsat2014_SWIR1 0.008701277 0.002768365 0.002919708
+22:                           MODCF_monthlymean_02 0.008395175 0.011931948 0.014598540
+23:                                  M_listeNovDec 0.008284557 0.004215634 0.007299270
+24:                                        POSSRT6 0.007722577 0.006884174 0.010218978
+25:                                        DVMSRT6 0.007248455 0.008145865 0.011678832
+                                           Feature        Gain       Cover   Frequence
+--------------------------------------
+
+Variable: N
+Ranger result
+
+Call:
+ ranger(formulaString.lst[[j]], data = dfs, importance = "impurity",      write.forest = TRUE, mtry = t.mrfX$bestTune$mtry, num.trees = 85) 
+
+Type:                             Regression 
+Number of trees:                  85 
+Sample size:                      63937 
+Number of independent variables:  194 
+Mtry:                             55 
+Target node size:                 5 
+Variable importance mode:         impurity 
+OOB prediction error:             293337.9 
+R squared:                        0.6764944 
+
+ Variable importance:
+                                 [,1]
+DEPTH                      7031496884
+M_listeNov_D               3386204593
+MTWI_AF_250m               2138576905
+M_listeOct_D               1727668207
+CHELSA_prec_11_1979_2013   1592236147
+PHIHOX_M                   1454493574
+M_listeOct_N               1199678704
+CHELSA_prec_4_1979_2013    1004499811
+DEM100m                     800128684
+SKY_WV_M_JanFeb_10km        771971380
+CHELSA_prec_12_1979_2013    713579941
+MODCF_meanannual            650598779
+CHELSA_prec_1_1979_2013     611287461
+CHELSA_prec_1979_2013_land  606496843
+CHELSA_prec_9_1979_2013     564168678
+SKY_WV_M_NovDec_10km        528527918
+M_listeNovDec               502570477
+M_listeJulAug               477675998
+CHELSA_prec_5_1979_2013     473771419
+M_listeMayJun               473390941
+CHELSA_prec_2_1979_2013     456405838
+Landsat2014_SWIR1           453445183
+SD_listeMarApr              452789907
+CHELSA_prec_6_1979_2013     452671110
+M_listeMar_D                448829647
+
+eXtreme Gradient Boosting 
+
+63937 samples
+  194 predictors
+
+No pre-processing
+Resampling: Cross-Validated (3 fold, repeated 1 times) 
+Summary of sample sizes: 42626, 42624, 42624 
+Resampling results across tuning parameters:
+
+  eta  max_depth  nrounds  RMSE      Rsquared 
+  0.3  2           50      687.1824  0.4810650
+  0.3  2          100      660.6147  0.5196165
+  0.3  3           50      647.6009  0.5398540
+  0.3  3          100      621.5298  0.5749773
+  0.4  2           50      682.9175  0.4860658
+  0.4  2          100      659.7334  0.5198862
+  0.4  3           50      644.0598  0.5425395
+  0.4  3          100      618.6190  0.5778912
+
+Tuning parameter 'gamma' was held constant at a value of 0
+Tuning parameter 'colsample_bytree'
+ was held constant at a value of 0.8
+Tuning parameter 'min_child_weight' was held constant at
+ a value of 1
+RMSE was used to select the optimal model using  the smallest value.
+The final values used for the model were nrounds = 100, max_depth = 3, eta = 0.4, gamma =
+ 0, colsample_bytree = 0.8 and min_child_weight = 1. 
+
+ XGBoost variable importance:
+                       Feature        Gain        Cover   Frequence
+ 1:                      DEPTH 0.178397968 0.0664409402 0.087847731
+ 2:               M_listeNov_D 0.139789946 0.0075250892 0.004392387
+ 3:               MTWI_AF_250m 0.065365523 0.0277876037 0.023426061
+ 4:               M_listeOct_D 0.060307490 0.0136306513 0.008784773
+ 5:   CHELSA_prec_11_1979_2013 0.034450237 0.0158995591 0.014641288
+ 6:                    DEM100m 0.032443677 0.0157884077 0.024890190
+ 7:                    TPISRT6 0.031080955 0.0169184301 0.027818448
+ 8:       SKY_WV_M_MarApr_10km 0.030021468 0.0049046363 0.011713031
+ 9:               M_listeMar_D 0.021657522 0.0042869949 0.007320644
+10:           MODCF_meanannual 0.021450101 0.0126631853 0.019033675
+11:               M_listeOct_N 0.019971942 0.0200395860 0.013177160
+12:                   PHIHOX_M 0.019687712 0.0481040257 0.048316252
+13:          Landsat2014_SWIR1 0.018429428 0.0088052079 0.005856515
+14:               M_listeApr_N 0.015076487 0.0138502954 0.010248902
+15:    CHELSA_prec_5_1979_2013 0.014913243 0.0306410994 0.021961933
+16: CHELSA_prec_1979_2013_land 0.014222554 0.0120518523 0.010248902
+17:    CHELSA_prec_9_1979_2013 0.012887646 0.0137195933 0.008784773
+18:       SKY_WV_M_JulAug_10km 0.012667651 0.0034640466 0.008784773
+19:              M_listeMarApr 0.010042025 0.0148114009 0.019033675
+20:               M_listeSep_N 0.008792216 0.0043556044 0.005856515
+21:    CHELSA_prec_4_1979_2013 0.008566233 0.0071035270 0.010248902
+22:    CHELSA_prec_6_1979_2013 0.007388373 0.0119288662 0.013177160
+23:       SKY_WV_M_NovDec_10km 0.007258539 0.0196385649 0.011713031
+24:               M_listeJun_D 0.007137586 0.0033442408 0.004392387
+25:                    MRNSRT6 0.006712980 0.0003338193 0.008784773
+                       Feature        Gain        Cover   Frequence
+--------------------------------------
+
+Variable: P
+Ranger result
+
+Call:
+ ranger(formulaString.lst[[j]], data = dfs, importance = "impurity",      write.forest = TRUE, mtry = t.mrfX$bestTune$mtry, num.trees = 85) 
+
+Type:                             Regression 
+Number of trees:                  85 
+Sample size:                      42984 
+Number of independent variables:  194 
+Mtry:                             5 
+Target node size:                 5 
+Variable importance mode:         impurity 
+OOB prediction error:             1838.482 
+R squared:                        0.1100858 
+
+ Variable importance:
+                              [,1]
+VDPSRT6                  1016777.6
+CHELSA_prec_7_1979_2013  1010407.0
+DVMSRT6                   989164.5
+CHELSA_prec_11_1979_2013  972855.3
+DEM100m                   961290.6
+SD_listeMayJun            951149.3
+CHELSA_prec_1_1979_2013   941547.5
+POSSRT6                   935624.6
+M_listeJulAug             930117.4
+M_listeMayJun             894528.1
+M_listeMarApr             879150.0
+CHELSA_prec_2_1979_2013   878363.5
+SD_listeJulAug            868208.2
+M_listeJanFeb             862086.6
+M_listeNovDec             858172.3
+Landsat2014_red           855804.9
+SD_listeMarApr            853073.9
+Landsat2000_NIR           847214.4
+SD_listeJanFeb            843688.3
+MTWI_AF_250m              840198.5
+CHELSA_prec_12_1979_2013  831688.9
+CHELSA_prec_6_1979_2013   819258.4
+NEGSRT6                   810316.5
+M_listeSepOct             791657.6
+Landsat2014_SWIR1         790960.7
+
+eXtreme Gradient Boosting 
+
+42984 samples
+  194 predictors
+
+No pre-processing
+Resampling: Cross-Validated (3 fold, repeated 1 times) 
+Summary of sample sizes: 28656, 28656, 28656 
+Resampling results across tuning parameters:
+
+  eta  max_depth  nrounds  RMSE      Rsquared  
+  0.3  2           50      43.39156  0.08739603
+  0.3  2          100      43.30638  0.09237361
+  0.3  3           50      43.52224  0.08532065
+  0.3  3          100      43.58535  0.08805777
+  0.4  2           50      43.56315  0.08110031
+  0.4  2          100      43.46768  0.08741400
+  0.4  3           50      44.01801  0.07512830
+  0.4  3          100      44.28221  0.07654253
+
+Tuning parameter 'gamma' was held constant at a value of 0
+Tuning parameter 'colsample_bytree'
+ was held constant at a value of 0.8
+Tuning parameter 'min_child_weight' was held constant at
+ a value of 1
+RMSE was used to select the optimal model using  the smallest value.
+The final values used for the model were nrounds = 100, max_depth = 2, eta = 0.3, gamma =
+ 0, colsample_bytree = 0.8 and min_child_weight = 1. 
+
+ XGBoost variable importance:
+                                           Feature       Gain       Cover   Frequence
+ 1:                        CHELSA_prec_6_1979_2013 0.12747934 0.037308301 0.030000000
+ 2:                            dens_phosphates_5km 0.07803743 0.038869579 0.050000000
+ 3:                        CHELSA_prec_1_1979_2013 0.07273477 0.048597618 0.043333333
+ 4:                                 SD_listeMayJun 0.04627059 0.032632491 0.036666667
+ 5:                                 SD_listeMarApr 0.04060951 0.040839964 0.033333333
+ 6:                           SKY_WV_M_MayJun_10km 0.03933269 0.003625302 0.013333333
+ 7:                                       PHIHOX_M 0.03923380 0.022838149 0.016666667
+ 8:                       CHELSA_prec_11_1979_2013 0.03141998 0.018604946 0.023333333
+ 9:                        CHELSA_prec_9_1979_2013 0.03073801 0.008202122 0.006666667
+10:                                        VDPSRT6 0.02951074 0.016767169 0.016666667
+11:                                  SD_listeSep_D 0.02245755 0.014558324 0.016666667
+12:                                   MTWI_AF_250m 0.02200116 0.024529709 0.023333333
+13:                        CHELSA_prec_4_1979_2013 0.02004950 0.015991764 0.016666667
+14: average_soil_and_sedimentary_deposit_thickness 0.01826041 0.005319770 0.006666667
+15:                                Landsat2000_NIR 0.01603741 0.040220664 0.030000000
+16:                                  M_listeJulAug 0.01559452 0.026084706 0.030000000
+17:                MODCF_seasonality_concentration 0.01545627 0.019531686 0.016666667
+18:                                    dens_CU_5km 0.01533951 0.011637702 0.016666667
+19:                        CHELSA_prec_7_1979_2013 0.01523669 0.014589149 0.013333333
+20:                                  SD_listeFeb_D 0.01477999 0.015729806 0.013333333
+21:                           MODCF_monthlymean_07 0.01462328 0.008169435 0.006666667
+22:                                   M_listeSep_D 0.01360900 0.010000000 0.006666667
+23:                                        DVMSRT6 0.01270256 0.030461800 0.026666667
+24:                       CHELSA_prec_12_1979_2013 0.01233847 0.002401126 0.003333333
+25:                           MODCF_monthlymean_12 0.01106008 0.015933022 0.020000000
+                                           Feature       Gain       Cover   Frequence
+--------------------------------------
+
+Variable: P.B
+Ranger result
+
+Call:
+ ranger(formulaString.lst[[j]], data = dfs, importance = "impurity",      write.forest = TRUE, mtry = t.mrfX$bestTune$mtry, num.trees = 85) 
+
+Type:                             Regression 
+Number of trees:                  85 
+Sample size:                      7928 
+Number of independent variables:  194 
+Mtry:                             25 
+Target node size:                 5 
+Variable importance mode:         impurity 
+OOB prediction error:             226.9899 
+R squared:                        0.590578 
+
+ Variable importance:
+                                                  [,1]
+M_listeNovDec                                283050.72
+PHIHOX_M                                     186196.13
+SKY_WV_M_SepOct_10km                         114402.26
+DEPTH                                        103331.90
+SD_listeFeb_D                                 83542.54
+MODCF_monthlymean_11                          78777.00
+M_listeSep_D                                  77574.01
+MODCF_monthlymean_04                          75912.12
+M_listeMarApr                                 75688.73
+M_listeJulAug                                 71397.26
+Landsat2014_NIR                               71272.41
+Landsat2014_red                               67986.39
+CHELSA_prec_11_1979_2013                      67275.59
+SKY_WV_M_JanFeb_10km                          65065.56
+SD_listeSep_D                                 63795.33
+ESACCI_LC_L4_LCCS_Map_300m_P5Y_2010_v1.6.112  61840.76
+SD_listeApr_D                                 60316.80
+CHELSA_prec_9_1979_2013                       60138.01
+M_listeNov_D                                  58142.92
+M_listeMayJun                                 55659.52
+SKY_WV_M_NovDec_10km                          55547.63
+SKY_WV_M_MayJun_10km                          53655.56
+SD_listeSep_N                                 53224.14
+M_listeFeb_D                                  50132.04
+SD_listeAug_D                                 48551.19
+
+eXtreme Gradient Boosting 
+
+7928 samples
+ 194 predictors
+
+No pre-processing
+Resampling: Cross-Validated (3 fold, repeated 1 times) 
+Summary of sample sizes: 5286, 5286, 5284 
+Resampling results across tuning parameters:
+
+  eta  max_depth  nrounds  RMSE      Rsquared 
+  0.3  2           50      18.05285  0.4305890
+  0.3  2          100      17.48136  0.4655765
+  0.3  3           50      16.72384  0.5148250
+  0.3  3          100      16.28253  0.5359542
+  0.4  2           50      18.58542  0.4182987
+  0.4  2          100      18.08271  0.4484444
+  0.4  3           50      16.65619  0.5181556
+  0.4  3          100      16.27280  0.5368972
+
+Tuning parameter 'gamma' was held constant at a value of 0
+Tuning parameter 'colsample_bytree'
+ was held constant at a value of 0.8
+Tuning parameter 'min_child_weight' was held constant at
+ a value of 1
+RMSE was used to select the optimal model using  the smallest value.
+The final values used for the model were nrounds = 100, max_depth = 3, eta = 0.4, gamma =
+ 0, colsample_bytree = 0.8 and min_child_weight = 1. 
+
+ XGBoost variable importance:
+                                           Feature        Gain        Cover   Frequence
+ 1:                                  M_listeNovDec 0.096416446 1.963445e-02 0.012759171
+ 2:                       CHELSA_prec_11_1979_2013 0.092972255 1.043554e-02 0.011164274
+ 3:                               MODCF_meanannual 0.088146881 4.759025e-03 0.035087719
+ 4:                           MODCF_monthlymean_06 0.066718025 1.656703e-04 0.011164274
+ 5:                                       PHIHOX_M 0.060775018 3.476426e-02 0.065390750
+ 6:                           SKY_WV_M_SepOct_10km 0.056165720 2.468403e-02 0.014354067
+ 7:                           MODCF_monthlymean_01 0.053130893 1.831750e-02 0.041467305
+ 8:                                   M_listeAug_D 0.053083418 2.287343e-02 0.012759171
+ 9:                                          DEPTH 0.039893212 3.331192e-02 0.102073365
+10:                                  M_listeMarApr 0.035284486 9.629479e-03 0.006379585
+11:                                  SD_listeFeb_D 0.034873250 3.613714e-02 0.022328549
+12:                       CHELSA_prec_10_1979_2013 0.030857738 9.029029e-03 0.009569378
+13:                                   MTWI_AF_250m 0.017323779 3.648951e-03 0.007974482
+14:                           MODCF_monthlymean_04 0.016211217 3.311303e-03 0.014354067
+15:                                  SD_listeApr_D 0.013635363 1.346134e-02 0.011164274
+16:                                        NEGSRT6 0.012792551 1.742860e-02 0.011164274
+17:                                  SD_listeDec_N 0.012299580 1.343527e-02 0.009569378
+18:                                  SD_listeDec_D 0.012062336 3.011877e-02 0.022328549
+19:                           MODCF_monthlymean_10 0.012000174 9.807764e-03 0.009569378
+20: average_soil_and_sedimentary_deposit_thickness 0.010949421 2.817235e-05 0.001594896
+21:                           MODCF_monthlymean_02 0.010791140 7.798276e-03 0.019138756
+22:                                        VDPSRT6 0.009302427 3.721063e-02 0.023923445
+23:                           SKY_WV_M_JanFeb_10km 0.009106546 2.452088e-02 0.015948963
+24:                                 SD_listeMarApr 0.008885216 2.523360e-02 0.020733652
+25:                           SKY_WV_M_NovDec_10km 0.007943232 1.987454e-02 0.011164274
+                                           Feature        Gain        Cover   Frequence
+--------------------------------------
+
+Variable: P.O
+Ranger result
+
+Call:
+ ranger(formulaString.lst[[j]], data = dfs, importance = "impurity",      write.forest = TRUE, mtry = t.mrfX$bestTune$mtry, num.trees = 85) 
+
+Type:                             Regression 
+Number of trees:                  85 
+Sample size:                      4152 
+Number of independent variables:  194 
+Mtry:                             35 
+Target node size:                 5 
+Variable importance mode:         impurity 
+OOB prediction error:             183.4689 
+R squared:                        0.5415221 
+
+ Variable importance:
+                                    [,1]
+MODCF_seasonality_concentration 71563.32
+MODCF_monthlymean_12            65195.66
+dens_phosphates_5km             59945.87
+SD_listeJanFeb                  59114.91
+MTWI_AF_250m                    49379.97
+DEPTH                           47297.84
+CHELSA_prec_11_1979_2013        46663.50
+Landsat2000_SWIR1               34329.12
+CHELSA_prec_4_1979_2013         30406.92
+MODCF_monthlymean_10            29109.34
+CHELSA_prec_12_1979_2013        23804.39
+PHIHOX_M                        23036.37
+MODCF_monthlymean_11            20293.00
+giems_d15_v10                   19220.87
+SD_listeNovDec                  18546.50
+Landsat2000_NIR                 18098.84
+MODCF_monthlymean_01            17611.12
+DEM100m                         17583.29
+CHELSA_prec_7_1979_2013         17119.40
+SD_listeFeb_D                   16069.35
+CHELSA_prec_3_1979_2013         15596.73
+DVMSRT6                         15545.42
+SD_listeAug_D                   14252.51
+MODCF_meanannual                14111.15
+Landsat2000_SWIR2               13975.91
+
+eXtreme Gradient Boosting 
+
+4152 samples
+ 194 predictors
+
+No pre-processing
+Resampling: Cross-Validated (3 fold, repeated 1 times) 
+Summary of sample sizes: 2769, 2767, 2768 
+Resampling results across tuning parameters:
+
+  eta  max_depth  nrounds  RMSE      Rsquared 
+  0.3  2           50      15.42144  0.4081424
+  0.3  2          100      14.88058  0.4511960
+  0.3  3           50      14.36959  0.4885561
+  0.3  3          100      14.22219  0.5046242
+  0.4  2           50      15.30357  0.4256117
+  0.4  2          100      14.80831  0.4709562
+  0.4  3           50      14.47711  0.4884348
+  0.4  3          100      14.42555  0.5015154
+
+Tuning parameter 'gamma' was held constant at a value of 0
+Tuning parameter 'colsample_bytree'
+ was held constant at a value of 0.8
+Tuning parameter 'min_child_weight' was held constant at
+ a value of 1
+RMSE was used to select the optimal model using  the smallest value.
+The final values used for the model were nrounds = 100, max_depth = 3, eta = 0.3, gamma =
+ 0, colsample_bytree = 0.8 and min_child_weight = 1. 
+
+ XGBoost variable importance:
+                            Feature        Gain       Cover   Frequence
+ 1: MODCF_seasonality_concentration 0.149159474 0.047001043 0.025914634
+ 2:                  SD_listeJanFeb 0.101700623 0.022767071 0.015243902
+ 3:                   SD_listeJan_D 0.058085942 0.015232645 0.015243902
+ 4:                    M_listeFeb_D 0.044663613 0.002189512 0.006097561
+ 5:                  SD_listeJulAug 0.042911286 0.019155621 0.019817073
+ 6:               Landsat2000_SWIR1 0.038267082 0.006667293 0.003048780
+ 7:                           DEPTH 0.037465070 0.059804108 0.121951220
+ 8:                         TPISRT6 0.031988340 0.025102711 0.021341463
+ 9:        CHELSA_prec_11_1979_2013 0.028345304 0.030436385 0.016768293
+10:                         DEM100m 0.024435039 0.019670281 0.021341463
+11:                MODCF_meanannual 0.020971587 0.010770922 0.025914634
+12:            MODCF_monthlymean_10 0.018266296 0.016851294 0.015243902
+13:            MODCF_monthlymean_12 0.017888545 0.018934823 0.012195122
+14:                   giems_d15_v10 0.016237109 0.005118496 0.006097561
+15:                        PHIHOX_M 0.015835220 0.019496854 0.032012195
+16:                 Landsat2014_NIR 0.015602915 0.006834296 0.012195122
+17:                         NEGSRT6 0.014150146 0.014216172 0.012195122
+18:        CHELSA_prec_12_1979_2013 0.014106297 0.004595005 0.003048780
+19:            SKY_WV_M_JanFeb_10km 0.012421236 0.002987596 0.003048780
+20:         CHELSA_prec_8_1979_2013 0.012089593 0.004142971 0.006097561
+21:         CHELSA_prec_2_1979_2013 0.011162197 0.001967911 0.003048780
+22:            MODCF_monthlymean_09 0.011133260 0.026294217 0.021341463
+23:                   SD_listeSep_D 0.010969996 0.010617568 0.009146341
+24:         CHELSA_prec_7_1979_2013 0.010382190 0.022658679 0.012195122
+25:         CHELSA_prec_4_1979_2013 0.009960118 0.037273090 0.024390244
+                            Feature        Gain       Cover   Frequence
+--------------------------------------
+
+Variable: P.T
+Ranger result
+
+Call:
+ ranger(formulaString.lst[[j]], data = dfs, importance = "impurity",      write.forest = TRUE, mtry = t.mrfX$bestTune$mtry, num.trees = 85) 
+
+Type:                             Regression 
+Number of trees:                  85 
+Sample size:                      7899 
+Number of independent variables:  194 
+Mtry:                             25 
+Target node size:                 5 
+Variable importance mode:         impurity 
+OOB prediction error:             65305.12 
+R squared:                        0.8843691 
+
+ Variable importance:
+                                     [,1]
+CHELSA_prec_7_1979_2013         418506958
+dens_AL_5km                     229448118
+CHELSA_prec_8_1979_2013         218156551
+CHELSA_prec_9_1979_2013         167235571
+GESUSG634                       129325261
+CHELSA_prec_2_1979_2013         125534133
+M_listeAug_D                    113471614
+CHELSA_prec_1979_2013_land       93743207
+SKY_WV_M_JanFeb_10km             90740938
+CHELSA_prec_6_1979_2013          84839956
+CHELSA_prec_3_1979_2013          73346821
+CHELSA_prec_1_1979_2013          72659385
+SKY_WV_M_MarApr_10km             70836598
+CHELSA_prec_11_1979_2013         67659320
+CHELSA_prec_12_1979_2013         66361950
+M_listeJulAug                    66285400
+M_listeJul_D                     64601881
+MODCF_monthlymean_06             64218301
+SKY_WV_M_NovDec_10km             56214280
+MODCF_seasonality_concentration  52899096
+CHELSA_prec_4_1979_2013          48323390
+MTWI_AF_250m                     47615769
+MODCF_monthlymean_11             45765319
+MODCF_monthlymean_09             44416654
+CHELSA_prec_10_1979_2013         43285562
+
+eXtreme Gradient Boosting 
+
+7899 samples
+ 194 predictors
+
+No pre-processing
+Resampling: Cross-Validated (3 fold, repeated 1 times) 
+Summary of sample sizes: 5266, 5266, 5266 
+Resampling results across tuning parameters:
+
+  eta  max_depth  nrounds  RMSE      Rsquared 
+  0.3  2           50      373.3799  0.7482665
+  0.3  2          100      337.4107  0.7938669
+  0.3  3           50      328.1844  0.8072547
+  0.3  3          100      308.4251  0.8300319
+  0.4  2           50      356.5319  0.7697609
+  0.4  2          100      328.8129  0.8053557
+  0.4  3           50      315.5081  0.8204745
+  0.4  3          100      300.3487  0.8385166
+
+Tuning parameter 'gamma' was held constant at a value of 0
+Tuning parameter 'colsample_bytree'
+ was held constant at a value of 0.8
+Tuning parameter 'min_child_weight' was held constant at
+ a value of 1
+RMSE was used to select the optimal model using  the smallest value.
+The final values used for the model were nrounds = 100, max_depth = 3, eta = 0.4, gamma =
+ 0, colsample_bytree = 0.8 and min_child_weight = 1. 
+
+ XGBoost variable importance:
+                                           Feature        Gain        Cover   Frequence
+ 1:                        CHELSA_prec_8_1979_2013 0.440972806 4.861475e-02 0.025641026
+ 2:                                      GESUSG634 0.106507383 1.561602e-02 0.009615385
+ 3:                                    dens_AL_5km 0.037560430 2.221889e-02 0.019230769
+ 4:                       CHELSA_prec_10_1979_2013 0.031126483 1.952879e-02 0.020833333
+ 5:                           MODCF_monthlymean_08 0.026543658 1.353831e-02 0.014423077
+ 6:                                  M_listeJulAug 0.024425891 1.605031e-02 0.014423077
+ 7:                               MODCF_meanannual 0.024290941 6.941347e-03 0.040064103
+ 8:                                          DEPTH 0.019378822 2.576448e-02 0.092948718
+ 9:                                   M_listeSep_D 0.016275908 5.123184e-03 0.006410256
+10:                                  SD_listeOct_D 0.015706400 4.116231e-02 0.024038462
+11:                                   M_listeJul_D 0.013642023 3.420661e-03 0.003205128
+12:                                   MTWI_AF_250m 0.013458976 1.545016e-02 0.011217949
+13:                           MODCF_monthlymean_06 0.012653636 1.582831e-02 0.022435897
+14:                        CHELSA_prec_9_1979_2013 0.012512066 1.944776e-02 0.016025641
+15:                                  M_listeNovDec 0.011538717 7.216941e-05 0.003205128
+16:                                 SD_listeNovDec 0.011013699 3.490720e-03 0.009615385
+17:                                        SLPSRT6 0.010536365 6.652247e-03 0.004807692
+18:                       CHELSA_prec_11_1979_2013 0.010532941 1.446005e-02 0.011217949
+19: average_soil_and_sedimentary_deposit_thickness 0.010251440 3.353556e-03 0.003205128
+20:                                  SD_listeMay_N 0.009997752 1.591694e-02 0.012820513
+21:                                  M_listeSepOct 0.009106666 2.290682e-02 0.017628205
+22:                                  SD_listeMay_D 0.007796502 4.431455e-04 0.004807692
+23:                            dens_phosphates_5km 0.007559579 2.306804e-02 0.017628205
+24:                                        DVMSRT6 0.006311807 1.028942e-02 0.012820513
+25:                                  SD_listeFeb_D 0.006211463 1.895186e-02 0.017628205
+                                           Feature        Gain        Cover   Frequence
+--------------------------------------
+
+Variable: K
+Ranger result
+
+Call:
+ ranger(formulaString.lst[[j]], data = dfs, importance = "impurity",      write.forest = TRUE, mtry = t.mrfX$bestTune$mtry, num.trees = 85) 
+
+Type:                             Regression 
+Number of trees:                  85 
+Sample size:                      104784 
+Number of independent variables:  194 
+Mtry:                             15 
+Target node size:                 5 
+Variable importance mode:         impurity 
+OOB prediction error:             38169.17 
+R squared:                        0.6422781 
+
+ Variable importance:
+                              [,1]
+PHIHOX_M                 381322069
+SKY_WV_M_JulAug_10km     249851572
+DEM100m                  220463829
+CHELSA_prec_1_1979_2013  194487466
+SD_listeApr_D            180128756
+CHELSA_prec_2_1979_2013  174233764
+SKY_WV_M_JanFeb_10km     170536705
+DEPTH                    164156580
+MODCF_monthlymean_02     156683148
+SKY_WV_M_NovDec_10km     142855942
+SD_listeMar_D            141531416
+MODCF_monthlymean_03     139123186
+GESUSG626                129310882
+CHELSA_prec_4_1979_2013  128040638
+SKY_WV_M_SepOct_10km     126934723
+CHELSA_prec_5_1979_2013  123417092
+MODCF_monthlymean_12     118306059
+CHELSA_prec_12_1979_2013 117808444
+MODCF_monthlymean_01     116280850
+SD_listeFeb_D            112591469
+MODCF_monthlymean_07     106781399
+CHELSA_prec_7_1979_2013  106147641
+CHELSA_prec_3_1979_2013  105088413
+SKY_WV_M_MayJun_10km     102728146
+M_listeOct_N             100218821
+
+eXtreme Gradient Boosting 
+
+104784 samples
+   194 predictors
+
+No pre-processing
+Resampling: Cross-Validated (3 fold, repeated 1 times) 
+Summary of sample sizes: 69857, 69855, 69856 
+Resampling results across tuning parameters:
+
+  eta  max_depth  nrounds  RMSE      Rsquared 
+  0.3  2           50      256.5727  0.3857740
+  0.3  2          100      249.4604  0.4184989
+  0.3  3           50      242.0452  0.4531446
+  0.3  3          100      234.5911  0.4854471
+  0.4  2           50      254.0298  0.3964734
+  0.4  2          100      247.5939  0.4260270
+  0.4  3           50      241.7108  0.4531150
+  0.4  3          100      232.9649  0.4916500
+
+Tuning parameter 'gamma' was held constant at a value of 0
+Tuning parameter 'colsample_bytree'
+ was held constant at a value of 0.8
+Tuning parameter 'min_child_weight' was held constant at
+ a value of 1
+RMSE was used to select the optimal model using  the smallest value.
+The final values used for the model were nrounds = 100, max_depth = 3, eta = 0.4, gamma =
+ 0, colsample_bytree = 0.8 and min_child_weight = 1. 
+
+ XGBoost variable importance:
+                            Feature        Gain        Cover   Frequence
+ 1:                        PHIHOX_M 0.125381644 0.0640682011 0.064046579
+ 2:                   SD_listeMar_D 0.097107587 0.0233227195 0.017467249
+ 3:            SKY_WV_M_JulAug_10km 0.078994567 0.0150749756 0.017467249
+ 4:                         DEM100m 0.062327662 0.0293545676 0.020378457
+ 5:         CHELSA_prec_5_1979_2013 0.040295879 0.0053777393 0.008733624
+ 6:         CHELSA_prec_4_1979_2013 0.040116040 0.0115051810 0.016011645
+ 7:                       GESUSG640 0.037606287 0.0073599159 0.007278020
+ 8:            SKY_WV_M_SepOct_10km 0.025945071 0.0135355838 0.010189229
+ 9: MODCF_seasonality_concentration 0.020794405 0.0180801792 0.023289665
+10:                       GESUSG626 0.019860151 0.0012652082 0.001455604
+11:                    M_listeMar_D 0.019201306 0.0123832747 0.008733624
+12:                   SD_listeApr_D 0.017108735 0.0047928525 0.013100437
+13:                           DEPTH 0.016916425 0.0318978677 0.052401747
+14:        CHELSA_prec_11_1979_2013 0.016794302 0.0009208484 0.011644833
+15:                MODCF_meanannual 0.016107281 0.0114320781 0.020378457
+16:        CHELSA_prec_12_1979_2013 0.015279146 0.0028450643 0.010189229
+17:                    M_listeJul_D 0.014237884 0.0038937950 0.005822416
+18:            SKY_WV_M_JanFeb_10km 0.013348355 0.0084469795 0.008733624
+19:                    M_listeJul_N 0.012209076 0.0009127046 0.001455604
+20:            MODCF_monthlymean_04 0.012102420 0.0120803972 0.011644833
+21:                  SD_listeJanFeb 0.011547058 0.0087446400 0.013100437
+22:            MODCF_monthlymean_07 0.011542099 0.0040232680 0.002911208
+23:                   SD_listeFeb_D 0.010180205 0.0269966651 0.021834061
+24:            MODCF_monthlymean_02 0.009485616 0.0143625882 0.017467249
+25:            MODCF_monthlymean_03 0.009116230 0.0112106699 0.014556041
+                            Feature        Gain        Cover   Frequence
+--------------------------------------
+
+Variable: S
+Ranger result
+
+Call:
+ ranger(formulaString.lst[[j]], data = dfs, importance = "impurity",      write.forest = TRUE, mtry = t.mrfX$bestTune$mtry, num.trees = 85) 
+
+Type:                             Regression 
+Number of trees:                  85 
+Sample size:                      43666 
+Number of independent variables:  194 
+Mtry:                             5 
+Target node size:                 5 
+Variable importance mode:         impurity 
+OOB prediction error:             5210.689 
+R squared:                        0.08747271 
+
+ Variable importance:
+                            [,1]
+GESUSG616                6450046
+Landsat2014_SWIR2        4034045
+MODCF_monthlymean_12     3999135
+CHELSA_prec_10_1979_2013 3853689
+CHELSA_prec_5_1979_2013  3778803
+MTWI_AF_250m             3776020
+CHELSA_prec_11_1979_2013 3445326
+SD_listeJulAug           3440265
+M_listeNov_D             3346152
+SD_listeMayJun           3340575
+SD_listeSepOct           3334467
+SD_listeJan_D            2958409
+M_listeJan_N             2817187
+CHELSA_prec_3_1979_2013  2799710
+SD_listeNovDec           2741092
+SD_listeMay_N            2717438
+SKY_WV_M_SepOct_10km     2692528
+CHELSA_prec_2_1979_2013  2625327
+CHELSA_prec_6_1979_2013  2565108
+MODCF_monthlymean_07     2533456
+SD_listeSep_D            2516988
+CHELSA_prec_8_1979_2013  2471029
+Landsat2000_NIR          2457883
+M_listeMar_D             2439243
+CHELSA_prec_4_1979_2013  2422073
+
+eXtreme Gradient Boosting 
+
+43666 samples
+  194 predictors
+
+No pre-processing
+Resampling: Cross-Validated (3 fold, repeated 1 times) 
+Summary of sample sizes: 29110, 29110, 29112 
+Resampling results across tuning parameters:
+
+  eta  max_depth  nrounds  RMSE      Rsquared  
+  0.3  2           50      72.90513  0.05814081
+  0.3  2          100      74.41206  0.05940345
+  0.3  3           50      76.48597  0.05216692
+  0.3  3          100      77.56807  0.05307548
+  0.4  2           50      76.10809  0.04875423
+  0.4  2          100      77.34937  0.05170811
+  0.4  3           50      79.50892  0.04319593
+  0.4  3          100      80.51971  0.04454064
+
+Tuning parameter 'gamma' was held constant at a value of 0
+Tuning parameter 'colsample_bytree'
+ was held constant at a value of 0.8
+Tuning parameter 'min_child_weight' was held constant at
+ a value of 1
+RMSE was used to select the optimal model using  the smallest value.
+The final values used for the model were nrounds = 50, max_depth = 2, eta = 0.3, gamma =
+ 0, colsample_bytree = 0.8 and min_child_weight = 1. 
+
+ XGBoost variable importance:
+                                          Feature        Gain        Cover   Frequence
+ 1:                       CHELSA_prec_4_1979_2013 0.170272201 2.329047e-04 0.020547945
+ 2:                                        MNGMAP 0.123428015 5.000009e-02 0.034246575
+ 3:                                SD_listeJulAug 0.108285406 9.923528e-03 0.020547945
+ 4:                                      PHIHOX_M 0.082281512 6.983799e-02 0.102739726
+ 5:                          MODCF_monthlymean_12 0.058939292 9.997270e-02 0.068493151
+ 6:                                  M_listeSep_D 0.051779436 1.097238e-01 0.089041096
+ 7:                                SD_listeMarApr 0.047061525 1.076354e-05 0.006849315
+ 8:                                     GESUSG616 0.043582849 3.634184e-03 0.041095890
+ 9:                               Landsat2000_red 0.036516245 1.000002e-02 0.013698630
+10:                              MODCF_meanannual 0.036059124 2.290115e-06 0.006849315
+11:                                       DEM100m 0.031998076 6.915988e-02 0.047945205
+12:                                 SD_listeSep_D 0.023440980 7.991999e-02 0.054794521
+13:                                  MTWI_AF_250m 0.021590849 5.999622e-02 0.041095890
+14:                                SD_listeNovDec 0.021526715 6.957531e-02 0.047945205
+15:                               Landsat2014_red 0.020159121 9.618485e-06 0.006849315
+16:                                 M_listeJulAug 0.018870361 7.983343e-02 0.054794521
+17: ESACCI_LC_L4_LCCS_Map_300m_P5Y_2010_v1.6.1150 0.015749020 1.999546e-02 0.013698630
+18:                                  M_listeAug_D 0.011503271 9.903604e-03 0.006849315
+19:                                 SD_listeApr_D 0.010526997 5.061155e-05 0.013698630
+20:                      CHELSA_prec_11_1979_2013 0.009380961 1.607661e-04 0.013698630
+21:                               Landsat2014_NIR 0.008513628 5.038254e-06 0.006849315
+22:                                  M_listeJan_N 0.005810584 1.010857e-02 0.020547945
+23:                          MODCF_monthlymean_01 0.004760801 4.122208e-06 0.006849315
+24:                       CHELSA_prec_5_1979_2013 0.004328946 1.351168e-05 0.013698630
+25:                             Landsat2014_SWIR1 0.003408166 6.893248e-05 0.006849315
+                                          Feature        Gain        Cover   Frequence
+--------------------------------------
+
+Variable: Ca
+Ranger result
+
+Call:
+ ranger(formulaString.lst[[j]], data = dfs, importance = "impurity",      write.forest = TRUE, mtry = t.mrfX$bestTune$mtry, num.trees = 85) 
+
+Type:                             Regression 
+Number of trees:                  85 
+Sample size:                      105173 
+Number of independent variables:  194 
+Mtry:                             45 
+Target node size:                 5 
+Variable importance mode:         impurity 
+OOB prediction error:             3311058 
+R squared:                        0.7333827 
+
+ Variable importance:
+                                 [,1]
+PHIHOX_M                 243598538563
+SKY_WV_M_JanFeb_10km      67510862651
+SKY_WV_M_NovDec_10km      31621905142
+MODCF_monthlymean_03      20415055237
+DEM100m                   20372444223
+M_listeMayJun             20359095961
+Landsat2014_NIR           19959364070
+SD_listeNov_D             18090894984
+M_listeJulAug             17892070634
+Landsat2014_SWIR1         17320875590
+SKY_WV_M_MarApr_10km      15941744897
+Landsat2014_SWIR2         14931459979
+SD_listeNovDec            14702733927
+SD_listeMar_D             14375154521
+M_listeMarApr             13369244626
+SD_listeMayJun            13281184916
+DEPTH                     13116626477
+MODCF_monthlymean_02      13001897708
+GESUSG626                 12502822216
+VDPSRT6                   12208932801
+SKY_WV_M_JulAug_10km      11381745321
+M_listeJun_D              11291923313
+MODCF_monthlymean_11      11230313123
+CHELSA_prec_11_1979_2013  11149200923
+M_listeFeb_D              11102512766
+
+eXtreme Gradient Boosting 
+
+105173 samples
+   194 predictors
+
+No pre-processing
+Resampling: Cross-Validated (3 fold, repeated 1 times) 
+Summary of sample sizes: 70115, 70116, 70115 
+Resampling results across tuning parameters:
+
+  eta  max_depth  nrounds  RMSE      Rsquared 
+  0.3  2           50      2351.957  0.5595863
+  0.3  2          100      2301.746  0.5785654
+  0.3  3           50      2265.730  0.5937742
+  0.3  3          100      2221.957  0.6106983
+  0.4  2           50      2358.278  0.5561704
+  0.4  2          100      2282.023  0.5855559
+  0.4  3           50      2329.450  0.5733932
+  0.4  3          100      2272.541  0.5985245
+
+Tuning parameter 'gamma' was held constant at a value of 0
+Tuning parameter 'colsample_bytree'
+ was held constant at a value of 0.8
+Tuning parameter 'min_child_weight' was held constant at
+ a value of 1
+RMSE was used to select the optimal model using  the smallest value.
+The final values used for the model were nrounds = 100, max_depth = 3, eta = 0.3, gamma =
+ 0, colsample_bytree = 0.8 and min_child_weight = 1. 
+
+ XGBoost variable importance:
+                 Feature        Gain        Cover   Frequence
+ 1:             PHIHOX_M 0.472741850 0.1667025494 0.128129602
+ 2: SKY_WV_M_JanFeb_10km 0.070687355 0.0370295937 0.027982327
+ 3: SKY_WV_M_NovDec_10km 0.042764819 0.0321491184 0.022091311
+ 4:        M_listeJulAug 0.035595151 0.0086309691 0.013254786
+ 5:              POSSRT6 0.026262912 0.0006066840 0.007363770
+ 6:          dens_MN_5km 0.022158968 0.0010137917 0.007363770
+ 7:      Landsat2014_NIR 0.019599195 0.0081407918 0.017673049
+ 8:             GESUSG68 0.017008187 0.0192199537 0.014727541
+ 9:            GESUSG626 0.016697378 0.0109001550 0.007363770
+10:            GESUSG640 0.013001056 0.0059815836 0.002945508
+11:                DEPTH 0.012991492 0.0192882540 0.026509573
+12:       SD_listeMayJun 0.012682129 0.0201670932 0.014727541
+13:              DEM100m 0.012652411 0.0141676343 0.008836524
+14:              DVMSRT6 0.012253312 0.0066675340 0.007363770
+15:    Landsat2014_SWIR1 0.010863073 0.0111079400 0.019145803
+16: MODCF_monthlymean_03 0.009376884 0.0162259291 0.017673049
+17:        SD_listeMar_D 0.008624143 0.0230604898 0.011782032
+18: MODCF_monthlymean_09 0.007449854 0.0090723379 0.005891016
+19:        SD_listeDec_N 0.007416367 0.0006494073 0.002945508
+20: MODCF_monthlymean_05 0.006675622 0.0099088025 0.007363770
+21:         MTWI_AF_250m 0.006256435 0.0157701079 0.017673049
+22:        M_listeSepOct 0.006097034 0.0097163573 0.008836524
+23:          dens_CU_5km 0.005989858 0.0017701342 0.007363770
+24:     MODCF_meanannual 0.005762269 0.0063839690 0.013254786
+25:              VDPSRT6 0.005441764 0.0058056193 0.011782032
+                 Feature        Gain        Cover   Frequence
+--------------------------------------
+
+Variable: Mg
+Ranger result
+
+Call:
+ ranger(formulaString.lst[[j]], data = dfs, importance = "impurity",      write.forest = TRUE, mtry = t.mrfX$bestTune$mtry, num.trees = 85) 
+
+Type:                             Regression 
+Number of trees:                  85 
+Sample size:                      103356 
+Number of independent variables:  194 
+Mtry:                             35 
+Target node size:                 5 
+Variable importance mode:         impurity 
+OOB prediction error:             54899.09 
+R squared:                        0.7941931 
+
+ Variable importance:
+                              [,1]
+PHIHOX_M                2480846740
+SKY_WV_M_JanFeb_10km    1238210503
+Landsat2014_NIR         1122250696
+Landsat2014_SWIR1        998534546
+MODCF_monthlymean_02     674023115
+Landsat2014_SWIR2        574441928
+SKY_WV_M_NovDec_10km     566928722
+M_listeMar_D             510079845
+SKY_WV_M_MarApr_10km     468978586
+Landsat2000_SWIR1        448414860
+DEM100m                  439749802
+MODCF_monthlymean_01     430786965
+M_listeApr_D             407441224
+M_listeMay_D             399110498
+MODCF_monthlymean_03     376215157
+Landsat2000_NIR          362030068
+DEPTH                    357052088
+SKY_WV_M_JulAug_10km     331112846
+M_listeFeb_D             283160106
+M_listeMarApr            282967968
+GESUSG640                278947658
+CHELSA_prec_2_1979_2013  272381161
+MODCF_monthlymean_12     268988765
+M_listeSepOct            239631028
+SKY_WV_M_SepOct_10km     239438188
+
+eXtreme Gradient Boosting 
+
+103356 samples
+   194 predictors
+
+No pre-processing
+Resampling: Cross-Validated (3 fold, repeated 1 times) 
+Summary of sample sizes: 68904, 68904, 68904 
+Resampling results across tuning parameters:
+
+  eta  max_depth  nrounds  RMSE      Rsquared 
+  0.3  2           50      350.1278  0.5410185
+  0.3  2          100      339.1486  0.5691390
+  0.3  3           50      332.3991  0.5865745
+  0.3  3          100      318.4846  0.6203631
+  0.4  2           50      347.4711  0.5475744
+  0.4  2          100      335.1719  0.5790058
+  0.4  3           50      329.5468  0.5931610
+  0.4  3          100      314.8365  0.6287058
+
+Tuning parameter 'gamma' was held constant at a value of 0
+Tuning parameter 'colsample_bytree'
+ was held constant at a value of 0.8
+Tuning parameter 'min_child_weight' was held constant at
+ a value of 1
+RMSE was used to select the optimal model using  the smallest value.
+The final values used for the model were nrounds = 100, max_depth = 3, eta = 0.4, gamma =
+ 0, colsample_bytree = 0.8 and min_child_weight = 1. 
+
+ XGBoost variable importance:
+                     Feature        Gain       Cover   Frequence
+ 1:                 PHIHOX_M 0.191922475 0.061449737 0.052401747
+ 2:     SKY_WV_M_JanFeb_10km 0.188102087 0.042606492 0.027656477
+ 3:        Landsat2014_SWIR1 0.121374026 0.010116650 0.023289665
+ 4:             M_listeMar_D 0.063985496 0.008103344 0.008733624
+ 5:                GESUSG640 0.032805125 0.004710045 0.002911208
+ 6:          Landsat2014_NIR 0.030011677 0.036266218 0.026200873
+ 7:     MODCF_monthlymean_02 0.028164181 0.007001743 0.011644833
+ 8: CHELSA_prec_11_1979_2013 0.021699691 0.011796383 0.013100437
+ 9:     MODCF_monthlymean_12 0.019063798 0.008520189 0.010189229
+10:        Landsat2014_SWIR2 0.017265234 0.009297182 0.020378457
+11:             M_listeApr_D 0.015804750 0.005113700 0.004366812
+12:                  DEM100m 0.014029278 0.025229122 0.021834061
+13:          Landsat2000_NIR 0.009429918 0.014518536 0.011644833
+14:             M_listeFeb_D 0.009311698 0.009326595 0.004366812
+15:             M_listeMay_D 0.009261799 0.011432881 0.011644833
+16:            M_listeSepOct 0.007244994 0.017986979 0.018922853
+17:             MTWI_AF_250m 0.007014274 0.010526981 0.014556041
+18:                    DEPTH 0.006676826 0.007767255 0.023289665
+19:     SKY_WV_M_MayJun_10km 0.006670096 0.010380819 0.013100437
+20:      dens_phosphates_5km 0.006557519 0.009709544 0.008733624
+21:     SKY_WV_M_JulAug_10km 0.006518696 0.012713024 0.016011645
+22:         MODCF_meanannual 0.006409353 0.023534747 0.026200873
+23:            SD_listeNov_D 0.006395599 0.016050044 0.008733624
+24:     MODCF_monthlymean_01 0.006004133 0.005064485 0.016011645
+25:        Landsat2000_SWIR1 0.005579409 0.010085947 0.007278020
+                     Feature        Gain       Cover   Frequence
+--------------------------------------
+
+Variable: Na
+Ranger result
+
+Call:
+ ranger(formulaString.lst[[j]], data = dfs, importance = "impurity",      write.forest = TRUE, mtry = t.mrfX$bestTune$mtry, num.trees = 85) 
+
+Type:                             Regression 
+Number of trees:                  85 
+Sample size:                      71986 
+Number of independent variables:  194 
+Mtry:                             25 
+Target node size:                 5 
+Variable importance mode:         impurity 
+OOB prediction error:             196724.2 
+R squared:                        0.6213555 
+
+ Variable importance:
+                                      [,1]
+PHIHOX_M                        3255296091
+DEPTH                           1126184957
+MODCF_seasonality_concentration  606361097
+MODCF_monthlymean_03             603103690
+M_listeDec_N                     535564787
+M_listeJanFeb                    516686291
+SLPSRT6                          474231917
+SD_listeApr_N                    401823122
+M_listeMayJun                    391346466
+M_listeJul_D                     390158060
+MTWI_AF_250m                     385618809
+M_listeJan_N                     373128236
+M_listeMarApr                    362111016
+DEM100m                          359647269
+MODCF_monthlymean_12             351981019
+SD_listeJulAug                   346457093
+MODCF_monthlymean_11             340638118
+MODCF_monthlymean_04             337896916
+CHELSA_prec_3_1979_2013          337501026
+CHELSA_prec_1979_2013_land       330903265
+M_listeNovDec                    328096644
+SD_listeMayJun                   320759424
+SD_listeDec_D                    309317145
+M_listeOct_N                     308896628
+M_listeNov_N                     307990363
+
+eXtreme Gradient Boosting 
+
+71986 samples
+  194 predictors
+
+No pre-processing
+Resampling: Cross-Validated (3 fold, repeated 1 times) 
+Summary of sample sizes: 47992, 47990, 47990 
+Resampling results across tuning parameters:
+
+  eta  max_depth  nrounds  RMSE      Rsquared 
+  0.3  2           50      554.2179  0.3982937
+  0.3  2          100      541.1777  0.4263531
+  0.3  3           50      528.3988  0.4594187
+  0.3  3          100      517.4351  0.4816718
+  0.4  2           50      554.0843  0.3986268
+  0.4  2          100      536.9597  0.4351912
+  0.4  3           50      521.1679  0.4727429
+  0.4  3          100      518.8523  0.4879070
+
+Tuning parameter 'gamma' was held constant at a value of 0
+Tuning parameter 'colsample_bytree'
+ was held constant at a value of 0.8
+Tuning parameter 'min_child_weight' was held constant at
+ a value of 1
+RMSE was used to select the optimal model using  the smallest value.
+The final values used for the model were nrounds = 100, max_depth = 3, eta = 0.3, gamma =
+ 0, colsample_bytree = 0.8 and min_child_weight = 1. 
+
+ XGBoost variable importance:
+                            Feature        Gain        Cover   Frequence
+ 1:                        PHIHOX_M 0.275382146 8.711423e-02 0.128935532
+ 2:                   M_listeMayJun 0.088254909 3.490095e-03 0.007496252
+ 3:                  SD_listeJulAug 0.070187523 4.282336e-04 0.004497751
+ 4: MODCF_seasonality_concentration 0.040662460 2.799447e-02 0.016491754
+ 5:            MODCF_monthlymean_02 0.035406336 2.186047e-02 0.016491754
+ 6:                           DEPTH 0.033411174 3.122077e-02 0.085457271
+ 7:                    M_listeOct_N 0.026919288 1.287160e-02 0.008995502
+ 8:         CHELSA_prec_1_1979_2013 0.024130075 2.928918e-03 0.013493253
+ 9:         CHELSA_prec_3_1979_2013 0.023203952 2.330280e-02 0.019490255
+10:                         POSSRT6 0.019645984 1.804295e-02 0.010494753
+11:            MODCF_monthlymean_11 0.017050426 1.925565e-02 0.010494753
+12:                  SD_listeJanFeb 0.016046033 8.271002e-03 0.011994003
+13:                       GESUSG631 0.015772192 1.236358e-04 0.004497751
+14:            MODCF_monthlymean_12 0.015160498 1.173262e-02 0.007496252
+15:                   SD_listeFeb_D 0.014987790 9.944253e-03 0.011994003
+16:                   SD_listeMay_D 0.013986579 1.782763e-04 0.004497751
+17:                   M_listeMarApr 0.013811346 4.161108e-03 0.004497751
+18:                    M_listeJul_D 0.012875671 3.817382e-03 0.007496252
+19:        CHELSA_prec_12_1979_2013 0.011678580 3.857529e-03 0.005997001
+20:                         VDPSRT6 0.010915851 3.097053e-02 0.022488756
+21:                MODCF_meanannual 0.010815834 1.333636e-02 0.022488756
+22:            MODCF_monthlymean_03 0.009140475 1.507940e-02 0.010494753
+23:                       GESUSG626 0.009026555 9.168496e-06 0.001499250
+24:                   SD_listeNov_N 0.007022597 9.617660e-05 0.002998501
+25:                 Landsat2014_NIR 0.006424888 3.505607e-03 0.004497751
+                            Feature        Gain        Cover   Frequence
+--------------------------------------
+
+Variable: B
+Ranger result
+
+Call:
+ ranger(formulaString.lst[[j]], data = dfs, importance = "impurity",      write.forest = TRUE, mtry = t.mrfX$bestTune$mtry, num.trees = 85) 
+
+Type:                             Regression 
+Number of trees:                  85 
+Sample size:                      43338 
+Number of independent variables:  194 
+Mtry:                             5 
+Target node size:                 5 
+Variable importance mode:         impurity 
+OOB prediction error:             0.2274259 
+R squared:                        0.397217 
+
+ Variable importance:
+                                    [,1]
+CHELSA_prec_8_1979_2013         295.3757
+CHELSA_prec_1_1979_2013         282.3273
+DEPTH                           277.9249
+CHELSA_prec_11_1979_2013        263.9560
+PHIHOX_M                        234.5270
+DEM100m                         232.0991
+SD_listeJulAug                  226.8216
+CHELSA_prec_9_1979_2013         216.2511
+POSSRT6                         208.4129
+CHELSA_prec_12_1979_2013        207.1040
+SD_listeJan_D                   207.0028
+CHELSA_prec_2_1979_2013         197.9887
+CHELSA_prec_6_1979_2013         189.9357
+CHELSA_prec_1979_2013_land      186.4331
+SD_listeJanFeb                  177.9927
+SKY_WV_M_JulAug_10km            164.1564
+MODCF_monthlymean_04            164.1041
+SD_listeMayJun                  156.1781
+CHELSA_prec_3_1979_2013         154.7086
+SD_listeMar_D                   154.4126
+M_listeJulAug                   152.9143
+MODCF_monthlymean_08            152.7793
+MODCF_monthlymean_01            148.1602
+SKY_WV_M_MarApr_10km            146.3421
+MODCF_seasonality_concentration 139.0991
+
+eXtreme Gradient Boosting 
+
+43338 samples
+  194 predictors
+
+No pre-processing
+Resampling: Cross-Validated (3 fold, repeated 1 times) 
+Summary of sample sizes: 28892, 28892, 28892 
+Resampling results across tuning parameters:
+
+  eta  max_depth  nrounds  RMSE       Rsquared 
+  0.3  2           50      0.5331563  0.2758208
+  0.3  2          100      0.5368450  0.2886342
+  0.3  3           50      0.5265786  0.3084480
+  0.3  3          100      0.5318273  0.3179065
+  0.4  2           50      0.5322737  0.2834102
+  0.4  2          100      0.5344661  0.2981818
+  0.4  3           50      0.5269132  0.3090898
+  0.4  3          100      0.5246410  0.3272318
+
+Tuning parameter 'gamma' was held constant at a value of 0
+Tuning parameter 'colsample_bytree'
+ was held constant at a value of 0.8
+Tuning parameter 'min_child_weight' was held constant at
+ a value of 1
+RMSE was used to select the optimal model using  the smallest value.
+The final values used for the model were nrounds = 100, max_depth = 3, eta = 0.4, gamma =
+ 0, colsample_bytree = 0.8 and min_child_weight = 1. 
+
+ XGBoost variable importance:
+                                          Feature       Gain        Cover   Frequence
+ 1:                                      PHIHOX_M 0.13928533 0.0790310885 0.055223881
+ 2:                                         DEPTH 0.13432602 0.0730360196 0.076119403
+ 3:                                SD_listeJulAug 0.06746656 0.0250317044 0.022388060
+ 4:                          SKY_WV_M_JanFeb_10km 0.06385885 0.0028914685 0.007462687
+ 5:                       CHELSA_prec_1_1979_2013 0.04917978 0.0177309252 0.017910448
+ 6:                       CHELSA_prec_9_1979_2013 0.04447192 0.0048874917 0.005970149
+ 7:                                       POSSRT6 0.03875422 0.0453803574 0.032835821
+ 8:                                 SD_listeMar_D 0.03221549 0.0013676270 0.005970149
+ 9:                                  MTWI_AF_250m 0.02928500 0.0112259094 0.014925373
+10:                               Landsat2000_red 0.02839019 0.0350398943 0.025373134
+11:                          SKY_WV_M_NovDec_10km 0.02662808 0.0198380138 0.014925373
+12:                       CHELSA_prec_2_1979_2013 0.02365159 0.0234301786 0.016417910
+13:                                       DEM100m 0.01801920 0.0220500914 0.014925373
+14:                               Landsat2014_red 0.01714209 0.0200044580 0.013432836
+15: ESACCI_LC_L4_LCCS_Map_300m_P5Y_2010_v1.6.1190 0.01672926 0.0106412779 0.007462687
+16:                      CHELSA_prec_10_1979_2013 0.01527960 0.0178686801 0.020895522
+17:                          MODCF_monthlymean_01 0.01439516 0.0131721686 0.020895522
+18:                          SKY_WV_M_MarApr_10km 0.01355440 0.0038069118 0.007462687
+19:                              MODCF_meanannual 0.01274502 0.0003211974 0.028358209
+20:                          MODCF_monthlymean_08 0.01193042 0.0021786196 0.005970149
+21:                          MODCF_monthlymean_03 0.01128993 0.0041404156 0.005970149
+22:                      CHELSA_prec_11_1979_2013 0.01100693 0.0094428641 0.008955224
+23:                                  M_listeNov_N 0.01099079 0.0001870575 0.005970149
+24:                                 SD_listeJan_D 0.01095226 0.0130174154 0.013432836
+25:                                SD_listeNovDec 0.01053058 0.0039542811 0.010447761
+                                          Feature       Gain        Cover   Frequence
+--------------------------------------
+
+Variable: Cu
+Ranger result
+
+Call:
+ ranger(formulaString.lst[[j]], data = dfs, importance = "impurity",      write.forest = TRUE, mtry = t.mrfX$bestTune$mtry, num.trees = 85) 
+
+Type:                             Regression 
+Number of trees:                  85 
+Sample size:                      45572 
+Number of independent variables:  194 
+Mtry:                             5 
+Target node size:                 5 
+Variable importance mode:         impurity 
+OOB prediction error:             4.43625 
+R squared:                        0.5422662 
+
+ Variable importance:
+                                    [,1]
+SKY_WV_M_MayJun_10km            8057.798
+CHELSA_prec_12_1979_2013        7378.610
+SKY_WV_M_NovDec_10km            6393.498
+SKY_WV_M_JulAug_10km            5905.083
+SKY_WV_M_SepOct_10km            5743.411
+DEPTH                           5616.461
+SKY_WV_M_JanFeb_10km            5368.182
+CHELSA_prec_7_1979_2013         5136.138
+MODCF_monthlymean_11            5065.741
+CHELSA_prec_8_1979_2013         4954.916
+CHELSA_prec_2_1979_2013         4889.585
+M_listeJulAug                   4845.008
+DEM100m                         4826.257
+MODCF_monthlymean_08            4687.610
+MODCF_seasonality_concentration 4668.709
+CHELSA_prec_3_1979_2013         4657.476
+NEGSRT6                         4622.884
+Landsat2014_SWIR2               4608.331
+CHELSA_prec_11_1979_2013        4597.070
+SD_listeJulAug                  4538.336
+CHELSA_prec_1_1979_2013         4430.182
+MODCF_monthlymean_10            4314.488
+MODCF_monthlymean_02            4122.204
+MODCF_monthlymean_06            4014.933
+Landsat2014_red                 3837.427
+
+eXtreme Gradient Boosting 
+
+45572 samples
+  194 predictors
+
+No pre-processing
+Resampling: Cross-Validated (3 fold, repeated 1 times) 
+Summary of sample sizes: 30381, 30381, 30382 
+Resampling results across tuning parameters:
+
+  eta  max_depth  nrounds  RMSE      Rsquared 
+  0.3  2           50      2.389291  0.4175601
+  0.3  2          100      2.322103  0.4459959
+  0.3  3           50      2.251654  0.4790046
+  0.3  3          100      2.192060  0.5062296
+  0.4  2           50      2.380913  0.4172993
+  0.4  2          100      2.299581  0.4558289
+  0.4  3           50      2.225397  0.4901595
+  0.4  3          100      2.198783  0.5041252
+
+Tuning parameter 'gamma' was held constant at a value of 0
+Tuning parameter 'colsample_bytree'
+ was held constant at a value of 0.8
+Tuning parameter 'min_child_weight' was held constant at
+ a value of 1
+RMSE was used to select the optimal model using  the smallest value.
+The final values used for the model were nrounds = 100, max_depth = 3, eta = 0.3, gamma =
+ 0, colsample_bytree = 0.8 and min_child_weight = 1. 
+
+ XGBoost variable importance:
+                                          Feature       Gain        Cover   Frequence
+ 1:                       CHELSA_prec_3_1979_2013 0.20027059 1.606987e-04 0.005873715
+ 2:                          SKY_WV_M_SepOct_10km 0.06130850 2.791748e-02 0.019089574
+ 3:                          SKY_WV_M_NovDec_10km 0.05085263 1.580048e-02 0.020558003
+ 4:                                  M_listeJan_N 0.04762054 4.003279e-03 0.008810573
+ 5:                                         DEPTH 0.03987174 5.498077e-02 0.048458150
+ 6:                          SKY_WV_M_MarApr_10km 0.03287235 1.567979e-02 0.014684288
+ 7:                       CHELSA_prec_6_1979_2013 0.03006617 2.144352e-02 0.017621145
+ 8:                          SKY_WV_M_MayJun_10km 0.03006267 1.802788e-02 0.016152717
+ 9:                                       MRNSRT6 0.02771160 4.842174e-05 0.007342144
+10:                      CHELSA_prec_11_1979_2013 0.02349098 1.193801e-02 0.013215859
+11:                                  M_listeMay_D 0.02062595 1.215064e-02 0.011747430
+12:                                  M_listeFeb_D 0.02020981 7.438443e-03 0.005873715
+13:                                       VDPSRT6 0.01946954 9.030436e-04 0.008810573
+14:                             Landsat2000_SWIR1 0.01887527 1.745611e-02 0.013215859
+15:                                  M_listeMar_D 0.01619546 3.646625e-03 0.010279001
+16:                              MODCF_meanannual 0.01610567 1.429729e-02 0.020558003
+17: ESACCI_LC_L4_LCCS_Map_300m_P5Y_2010_v1.6.1180 0.01501457 7.623791e-03 0.010279001
+18:                                  M_listeApr_D 0.01492581 8.102889e-03 0.014684288
+19:                          MODCF_monthlymean_12 0.01454927 6.944497e-03 0.008810573
+20:                                       DEM100m 0.01441002 2.190711e-02 0.026431718
+21:                               Landsat2000_NIR 0.01407504 7.462508e-03 0.005873715
+22:                                 SD_listeSep_D 0.01227852 3.793207e-03 0.007342144
+23:                       CHELSA_prec_4_1979_2013 0.01119055 2.396803e-02 0.019089574
+24:                                SD_listeJulAug 0.01108394 4.298417e-03 0.008810573
+25:                      CHELSA_prec_12_1979_2013 0.01055941 2.005194e-02 0.027900147
+                                          Feature       Gain        Cover   Frequence
+--------------------------------------
+
+Variable: Fe
+Ranger result
+
+Call:
+ ranger(formulaString.lst[[j]], data = dfs, importance = "impurity",      write.forest = TRUE, mtry = t.mrfX$bestTune$mtry, num.trees = 85) 
+
+Type:                             Regression 
+Number of trees:                  85 
+Sample size:                      18341 
+Number of independent variables:  194 
+Mtry:                             25 
+Target node size:                 5 
+Variable importance mode:         impurity 
+OOB prediction error:             2784.088 
+R squared:                        0.6860346 
+
+ Variable importance:
+                                   [,1]
+SKY_WV_M_JanFeb_10km            5555020
+dens_phosphates_5km             5026234
+SKY_WV_M_SepOct_10km            4871052
+SKY_WV_M_JulAug_10km            4586885
+MODCF_seasonality_concentration 4078056
+SKY_WV_M_MayJun_10km            3814046
+SKY_WV_M_MarApr_10km            3387829
+DEPTH                           3338440
+DEM100m                         3001898
+MODCF_meanannual                2755227
+MODCF_monthlymean_03            2628121
+POSSRT6                         2568455
+CHELSA_prec_9_1979_2013         2532851
+PHIHOX_M                        2529092
+CHELSA_prec_3_1979_2013         2407185
+SKY_WV_M_NovDec_10km            2401819
+MODCF_monthlymean_11            2248623
+CHELSA_prec_11_1979_2013        2127451
+CHELSA_prec_7_1979_2013         2054658
+DVMSRT6                         2044470
+CHELSA_prec_8_1979_2013         1992138
+CHELSA_prec_12_1979_2013        1875466
+CHELSA_prec_1_1979_2013         1873148
+VDPSRT6                         1690297
+CHELSA_prec_2_1979_2013         1656705
+
+eXtreme Gradient Boosting 
+
+18341 samples
+  194 predictors
+
+No pre-processing
+Resampling: Cross-Validated (3 fold, repeated 1 times) 
+Summary of sample sizes: 12228, 12227, 12227 
+Resampling results across tuning parameters:
+
+  eta  max_depth  nrounds  RMSE      Rsquared 
+  0.3  2           50      64.55500  0.5349598
+  0.3  2          100      61.57088  0.5741940
+  0.3  3           50      60.20114  0.5924403
+  0.3  3          100      58.54368  0.6136828
+  0.4  2           50      63.83039  0.5420185
+  0.4  2          100      61.36526  0.5756186
+  0.4  3           50      59.70997  0.5979812
+  0.4  3          100      58.31298  0.6165066
+
+Tuning parameter 'gamma' was held constant at a value of 0
+Tuning parameter 'colsample_bytree'
+ was held constant at a value of 0.8
+Tuning parameter 'min_child_weight' was held constant at
+ a value of 1
+RMSE was used to select the optimal model using  the smallest value.
+The final values used for the model were nrounds = 100, max_depth = 3, eta = 0.4, gamma =
+ 0, colsample_bytree = 0.8 and min_child_weight = 1. 
+
+ XGBoost variable importance:
+                                         Feature        Gain       Cover   Frequence
+ 1:                          dens_phosphates_5km 0.231112905 0.024118259 0.024279211
+ 2:                         SKY_WV_M_MayJun_10km 0.117834232 0.015839540 0.015174507
+ 3:                         SKY_WV_M_JanFeb_10km 0.069279398 0.007846890 0.010622155
+ 4:                                      POSSRT6 0.047907805 0.022920915 0.028831563
+ 5:                                     PHIHOX_M 0.043966842 0.006926527 0.009104704
+ 6:                             MODCF_meanannual 0.041224708 0.023848729 0.028831563
+ 7:                                        DEPTH 0.036877766 0.018142991 0.021244310
+ 8:              MODCF_seasonality_concentration 0.031515571 0.007866518 0.013657056
+ 9:                         MODCF_monthlymean_11 0.028986848 0.013923390 0.016691958
+10:                     CHELSA_prec_11_1979_2013 0.023935438 0.030021737 0.024279211
+11:                                      DVMSRT6 0.017637727 0.023113021 0.021244310
+12:                      CHELSA_prec_8_1979_2013 0.016229815 0.001508493 0.007587253
+13:                                    GESUSG626 0.014377889 0.006457441 0.004552352
+14:                                 M_listeApr_D 0.010554630 0.003333406 0.001517451
+15:                         MODCF_monthlymean_12 0.009870725 0.011354772 0.013657056
+16:                                      DEM100m 0.008253898 0.015133274 0.012139605
+17:                         MODCF_monthlymean_09 0.006679125 0.010523102 0.009104704
+18:                                      SLPSRT6 0.006512535 0.006855646 0.007587253
+19:                                      VDPSRT6 0.006476056 0.013261471 0.019726859
+20: ESACCI_LC_L4_LCCS_Map_300m_P5Y_2010_v1.6.120 0.006425746 0.012142823 0.006069803
+21:                         SKY_WV_M_NovDec_10km 0.006358902 0.010961292 0.015174507
+22:                     CHELSA_prec_10_1979_2013 0.006316069 0.012406719 0.009104704
+23:                                 M_listeOct_D 0.006304747 0.002126248 0.003034901
+24:                         MODCF_monthlymean_03 0.006214271 0.006986322 0.016691958
+25:                         MODCF_monthlymean_07 0.006090194 0.015184527 0.016691958
+                                         Feature        Gain       Cover   Frequence
+--------------------------------------
+
+Variable: Mn
+Ranger result
+
+Call:
+ ranger(formulaString.lst[[j]], data = dfs, importance = "impurity",      write.forest = TRUE, mtry = t.mrfX$bestTune$mtry, num.trees = 85) 
+
+Type:                             Regression 
+Number of trees:                  85 
+Sample size:                      44689 
+Number of independent variables:  194 
+Mtry:                             55 
+Target node size:                 5 
+Variable importance mode:         impurity 
+OOB prediction error:             4685.066 
+R squared:                        0.5319143 
+
+ Variable importance:
+                                                  [,1]
+DEPTH                                         24688897
+CHELSA_prec_11_1979_2013                      17682289
+CHELSA_prec_4_1979_2013                       10334131
+MODCF_monthlymean_01                          10179062
+ESACCI_LC_L4_LCCS_Map_300m_P5Y_2010_v1.6.1180  9889240
+DEM100m                                        9444839
+CHELSA_prec_2_1979_2013                        9251239
+CHELSA_prec_1_1979_2013                        9002353
+SKY_WV_M_JanFeb_10km                           7744517
+CHELSA_prec_12_1979_2013                       7470694
+MODCF_monthlymean_12                           7370242
+M_listeJulAug                                  6976172
+PHIHOX_M                                       6604307
+MODCF_monthlymean_02                           6554514
+CHELSA_prec_8_1979_2013                        6363014
+CHELSA_prec_3_1979_2013                        6021101
+SKY_WV_M_JulAug_10km                           5823172
+CHELSA_prec_7_1979_2013                        5508737
+CHELSA_prec_9_1979_2013                        5405693
+M_listeSepOct                                  4853964
+VDPSRT6                                        4542128
+MODCF_monthlymean_09                           4509877
+MODCF_seasonality_concentration                4351339
+MTWI_AF_250m                                   4284797
+MODCF_monthlymean_08                           4247504
+
+eXtreme Gradient Boosting 
+
+44689 samples
+  194 predictors
+
+No pre-processing
+Resampling: Cross-Validated (3 fold, repeated 1 times) 
+Summary of sample sizes: 29793, 29793, 29792 
+Resampling results across tuning parameters:
+
+  eta  max_depth  nrounds  RMSE      Rsquared 
+  0.3  2           50      80.32573  0.3555791
+  0.3  2          100      80.28972  0.3657285
+  0.3  3           50      80.01685  0.3762452
+  0.3  3          100      78.62711  0.4085090
+  0.4  2           50      80.42209  0.3560016
+  0.4  2          100      81.06637  0.3658779
+  0.4  3           50      80.28560  0.3810220
+  0.4  3          100      79.98348  0.4011941
+
+Tuning parameter 'gamma' was held constant at a value of 0
+Tuning parameter 'colsample_bytree'
+ was held constant at a value of 0.8
+Tuning parameter 'min_child_weight' was held constant at
+ a value of 1
+RMSE was used to select the optimal model using  the smallest value.
+The final values used for the model were nrounds = 100, max_depth = 3, eta = 0.3, gamma =
+ 0, colsample_bytree = 0.8 and min_child_weight = 1. 
+
+ XGBoost variable importance:
+                                          Feature        Gain        Cover   Frequence
+ 1:                       CHELSA_prec_4_1979_2013 0.093242950 0.0241384902 0.018678161
+ 2:                      CHELSA_prec_11_1979_2013 0.091938187 0.0254055491 0.020114943
+ 3:                                         DEPTH 0.083384633 0.0554623016 0.043103448
+ 4:                                      PHIHOX_M 0.061116990 0.0125714590 0.014367816
+ 5:                                 M_listeJulAug 0.061045296 0.0205440767 0.024425287
+ 6: ESACCI_LC_L4_LCCS_Map_300m_P5Y_2010_v1.6.1180 0.058344083 0.0114890847 0.012931034
+ 7:                          SKY_WV_M_JanFeb_10km 0.056984438 0.0213373405 0.012931034
+ 8:                                       DEM100m 0.054851456 0.0240992559 0.022988506
+ 9:                       CHELSA_prec_8_1979_2013 0.027523860 0.0138443359 0.011494253
+10:                      CHELSA_prec_12_1979_2013 0.027498452 0.0196242339 0.014367816
+11:                                  M_listeApr_N 0.019909180 0.0004139740 0.004310345
+12:                          MODCF_monthlymean_01 0.014624443 0.0047312384 0.010057471
+13:                                  M_listeSep_D 0.012842198 0.0050138596 0.005747126
+14:                           dens_phosphates_5km 0.011124926 0.0158326793 0.011494253
+15:                          MODCF_monthlymean_02 0.010196587 0.0062742799 0.010057471
+16:                       CHELSA_prec_7_1979_2013 0.009935254 0.0030555013 0.004310345
+17:                          SKY_WV_M_MayJun_10km 0.009470496 0.0108368705 0.017241379
+18:                                   dens_FE_5km 0.009294869 0.0217378138 0.014367816
+19:                          SKY_WV_M_JulAug_10km 0.009255697 0.0161648282 0.022988506
+20:                                 SD_listeAug_N 0.008958265 0.0001332922 0.005747126
+21:                       CHELSA_prec_1_1979_2013 0.008315184 0.0109712069 0.014367816
+22:                                  M_listeJan_D 0.008205460 0.0045790003 0.007183908
+23:                          MODCF_monthlymean_09 0.007954982 0.0045291743 0.007183908
+24:               MODCF_seasonality_concentration 0.007866608 0.0255806116 0.024425287
+25:                                  M_listeMar_D 0.007790391 0.0090074782 0.007183908
+                                          Feature        Gain        Cover   Frequence
+--------------------------------------
+
+Variable: Zn
+Ranger result
+
+Call:
+ ranger(formulaString.lst[[j]], data = dfs, importance = "impurity",      write.forest = TRUE, mtry = t.mrfX$bestTune$mtry, num.trees = 85) 
+
+Type:                             Regression 
+Number of trees:                  85 
+Sample size:                      45626 
+Number of independent variables:  194 
+Mtry:                             15 
+Target node size:                 5 
+Variable importance mode:         impurity 
+OOB prediction error:             16.23723 
+R squared:                        0.4709339 
+
+ Variable importance:
+                                    [,1]
+CHELSA_prec_1_1979_2013         29558.38
+CHELSA_prec_12_1979_2013        28567.50
+M_listeMayJun                   25704.51
+CHELSA_prec_3_1979_2013         21430.63
+SD_listeMarApr                  21417.56
+CHELSA_prec_2_1979_2013         20983.34
+CHELSA_prec_11_1979_2013        20736.62
+CHELSA_prec_4_1979_2013         20214.50
+MTWI_AF_250m                    18686.97
+M_listeJulAug                   18471.99
+SKY_WV_M_NovDec_10km            18062.54
+M_listeJun_D                    17787.54
+SKY_WV_M_JulAug_10km            16958.02
+MODCF_monthlymean_07            16817.29
+M_listeMarApr                   16633.57
+M_listeSepOct                   16594.93
+SD_listeMayJun                  15708.49
+SKY_WV_M_SepOct_10km            15654.35
+SKY_WV_M_JanFeb_10km            15496.85
+CHELSA_prec_7_1979_2013         15034.14
+Landsat2000_NIR                 14958.76
+M_listeMay_D                    14938.33
+DEM100m                         14637.79
+CHELSA_prec_8_1979_2013         14564.11
+MODCF_seasonality_concentration 14431.03
+
+eXtreme Gradient Boosting 
+
+45626 samples
+  194 predictors
+
+No pre-processing
+Resampling: Cross-Validated (3 fold, repeated 1 times) 
+Summary of sample sizes: 30418, 30418, 30416 
+Resampling results across tuning parameters:
+
+  eta  max_depth  nrounds  RMSE      Rsquared 
+  0.3  2           50      4.525516  0.3381944
+  0.3  2          100      4.419704  0.3652774
+  0.3  3           50      4.362692  0.3807164
+  0.3  3          100      4.291301  0.3997350
+  0.4  2           50      4.509671  0.3386713
+  0.4  2          100      4.399913  0.3689961
+  0.4  3           50      4.382418  0.3738930
+  0.4  3          100      4.325164  0.3917246
+
+Tuning parameter 'gamma' was held constant at a value of 0
+Tuning parameter 'colsample_bytree'
+ was held constant at a value of 0.8
+Tuning parameter 'min_child_weight' was held constant at
+ a value of 1
+RMSE was used to select the optimal model using  the smallest value.
+The final values used for the model were nrounds = 100, max_depth = 3, eta = 0.3, gamma =
+ 0, colsample_bytree = 0.8 and min_child_weight = 1. 
+
+ XGBoost variable importance:
+                    Feature       Gain       Cover   Frequence
+ 1:          SD_listeMarApr 0.06582510 0.008204498 0.007374631
+ 2:    SKY_WV_M_SepOct_10km 0.05943062 0.018211485 0.019174041
+ 3:           M_listeMayJun 0.04900600 0.028619781 0.026548673
+ 4:                   DEPTH 0.04760099 0.043379928 0.045722714
+ 5: CHELSA_prec_1_1979_2013 0.03910428 0.013315423 0.013274336
+ 6: CHELSA_prec_2_1979_2013 0.03375293 0.017929335 0.014749263
+ 7:            MTWI_AF_250m 0.03326102 0.015247664 0.020648968
+ 8:            M_listeJun_D 0.03058481 0.009246891 0.007374631
+ 9:           SD_listeOct_D 0.02807147 0.014315589 0.014749263
+10:    SKY_WV_M_MayJun_10km 0.02770419 0.022432563 0.022123894
+11: CHELSA_prec_8_1979_2013 0.02318048 0.004428344 0.005899705
+12:         Landsat2014_red 0.02221692 0.006194889 0.005899705
+13:    SKY_WV_M_MarApr_10km 0.02097060 0.005686696 0.005899705
+14:           M_listeNovDec 0.02087686 0.003798510 0.007374631
+15:    SKY_WV_M_JulAug_10km 0.02077597 0.016160963 0.010324484
+16:            M_listeApr_D 0.02071660 0.001109241 0.005899705
+17:    SKY_WV_M_JanFeb_10km 0.01901802 0.005302265 0.011799410
+18:           SD_listeNov_N 0.01836700 0.013151919 0.019174041
+19:    MODCF_monthlymean_08 0.01704209 0.006150250 0.010324484
+20:    MODCF_monthlymean_03 0.01668789 0.006974199 0.013274336
+21:           SD_listeFeb_D 0.01395124 0.014664003 0.016224189
+22:             dens_MN_5km 0.01339199 0.025273281 0.017699115
+23:           M_listeJulAug 0.01334840 0.008291948 0.008849558
+24:    MODCF_monthlymean_12 0.01333876 0.008446612 0.013274336
+25:               GESUSG613 0.01298517 0.013591291 0.008849558
+                    Feature       Gain       Cover   Frequence
+--------------------------------------
+
+Variable: Al
+Ranger result
+
+Call:
+ ranger(formulaString.lst[[j]], data = dfs, importance = "impurity",      write.forest = TRUE, mtry = t.mrfX$bestTune$mtry, num.trees = 85) 
+
+Type:                             Regression 
+Number of trees:                  85 
+Sample size:                      30945 
+Number of independent variables:  194 
+Mtry:                             35 
+Target node size:                 5 
+Variable importance mode:         impurity 
+OOB prediction error:             27035.2 
+R squared:                        0.849249 
+
+ Variable importance:
+                                     [,1]
+PHIHOX_M                        410164506
+M_listeNov_D                    298907049
+CHELSA_prec_11_1979_2013        205624423
+MTWI_AF_250m                    162636323
+M_listeDec_D                    136265137
+MODCF_monthlymean_11            131976642
+DEM100m                         116454850
+MODCF_monthlymean_12            112057797
+CHELSA_prec_1979_2013_land      101372412
+CHELSA_prec_2_1979_2013          99832813
+CHELSA_prec_7_1979_2013          94479720
+CHELSA_prec_9_1979_2013          86280986
+CHELSA_prec_1_1979_2013          85868876
+CHELSA_prec_10_1979_2013         83723218
+CHELSA_prec_12_1979_2013         76150573
+CHELSA_prec_3_1979_2013          68061438
+CHELSA_prec_6_1979_2013          64344007
+MODCF_monthlymean_03             62848648
+M_listeMay_N                     62422394
+SKY_WV_M_JanFeb_10km             62250116
+MODCF_monthlymean_10             58240772
+MODCF_seasonality_concentration  54134489
+MODCF_meanannual                 53721031
+CHELSA_prec_8_1979_2013          53629382
+MODCF_monthlymean_02             51591538
+
+eXtreme Gradient Boosting 
+
+30945 samples
+  194 predictors
+
+No pre-processing
+Resampling: Cross-Validated (3 fold, repeated 1 times) 
+Summary of sample sizes: 20630, 20631, 20629 
+Resampling results across tuning parameters:
+
+  eta  max_depth  nrounds  RMSE      Rsquared 
+  0.3  2           50      245.0288  0.6709698
+  0.3  2          100      229.6496  0.7080749
+  0.3  3           50      224.1184  0.7217314
+  0.3  3          100      212.2503  0.7494965
+  0.4  2           50      239.1777  0.6831471
+  0.4  2          100      225.3305  0.7175884
+  0.4  3           50      221.0993  0.7278768
+  0.4  3          100      210.2746  0.7535528
+
+Tuning parameter 'gamma' was held constant at a value of 0
+Tuning parameter 'colsample_bytree'
+ was held constant at a value of 0.8
+Tuning parameter 'min_child_weight' was held constant at
+ a value of 1
+RMSE was used to select the optimal model using  the smallest value.
+The final values used for the model were nrounds = 100, max_depth = 3, eta = 0.4, gamma =
+ 0, colsample_bytree = 0.8 and min_child_weight = 1. 
+
+ XGBoost variable importance:
+                            Feature        Gain       Cover   Frequence
+ 1:                        PHIHOX_M 0.238709560 0.053916259 0.039130435
+ 2:                    MTWI_AF_250m 0.079654588 0.012637756 0.015942029
+ 3:             dens_phosphates_5km 0.052586313 0.009450579 0.008695652
+ 4:        CHELSA_prec_10_1979_2013 0.052059188 0.006844006 0.014492754
+ 5:        CHELSA_prec_11_1979_2013 0.041286332 0.022769009 0.018840580
+ 6:         CHELSA_prec_3_1979_2013 0.036629289 0.013762122 0.015942029
+ 7:         CHELSA_prec_9_1979_2013 0.035640394 0.001387523 0.004347826
+ 8:                           DEPTH 0.030126861 0.021028169 0.013043478
+ 9:      CHELSA_prec_1979_2013_land 0.026904849 0.008939347 0.010144928
+10:                       GESUSG626 0.024140627 0.002021231 0.001449275
+11:                         DEM100m 0.021403106 0.012832726 0.014492754
+12:            MODCF_monthlymean_11 0.020739284 0.015347631 0.015942029
+13:                MODCF_meanannual 0.016669435 0.006428105 0.013043478
+14: MODCF_seasonality_concentration 0.015205962 0.003791370 0.011594203
+15:                 Landsat2000_red 0.013583062 0.006839051 0.008695652
+16:            MODCF_monthlymean_03 0.013166928 0.011059248 0.013043478
+17:                   SD_listeSep_D 0.013099338 0.004318437 0.005797101
+18:            MODCF_monthlymean_12 0.012296051 0.013374658 0.011594203
+19:         CHELSA_prec_6_1979_2013 0.010928557 0.017969070 0.014492754
+20:        CHELSA_prec_12_1979_2013 0.010924026 0.021005548 0.015942029
+21:            SKY_WV_M_JanFeb_10km 0.010675237 0.011376156 0.008695652
+22:                    M_listeNov_D 0.010572782 0.005832636 0.004347826
+23:            SKY_WV_M_JulAug_10km 0.010458847 0.015297865 0.014492754
+24:                   SD_listeMar_D 0.009353397 0.012272051 0.008695652
+25:         CHELSA_prec_1_1979_2013 0.008415353 0.019796731 0.020289855
+                            Feature        Gain       Cover   Frequence
+--------------------------------------

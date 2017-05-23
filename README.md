@@ -12,3 +12,7 @@ Summary: This repository contains R code and some outputs of spatial predictions
 # Download Maps
 
 All maps are available for download under the [Open Database License (ODbl) v1.0](https://opendatacommons.org/licenses/odbl/) and can be downloaded from [www.isric.org](http://gsif.isric.org/doku.php/wiki:africa_nutrient_maps) without restrictions.
+
+# Disclaimer
+
+These are results of spatial predictions based on using Machine Learning algorithms attached to the above-listed paper and hence some errors and artifacts are still possible. We aim at updating these maps regularly i.e. as the new training / point data arrives. See also [http://www.isric.org/data/data-policy/#disclaimer](ISRIC's general disclaimer). Predictions of potential yield (e.g. [PotYield_crop1Maize_1km.tif](https://github.com/ISRICWorldSoil/AfricaSoilNutrients/blob/master/maps/PotYield_crop1Maize_1km.tif)) are based on the OFRA training data. These predictions are presented for experimental purposes only. 

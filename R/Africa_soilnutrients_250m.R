@@ -1,5 +1,5 @@
 ## Prediction of soil nutrients N,P,K,S,Ca,Mg,B,Cu,Fe,Mn,Zn (Mehlich-3 extractable)
-## by: Tom.Hengl@isric.org (with contributions by G.B.M. Heuvelink and M.G. Walsh)
+## by: Tom.Hengl@isric.org (with contributions by J.G.B. Leenaars, G.B.M. Heuvelink and M.G. Walsh)
 
 list.of.packages <- c("raster", "rgdal", "nnet", "plyr", "ROCR", "randomForest", "R.utils", "plyr", "parallel", "psych", "mda", "dismo", "snowfall", "hexbin", "lattice", "ranger", "xgboost", "doParallel", "caret", "plotKML", "compositions", "h2o", "bartMachine", "spatstat", "maptools", "maps", "grDevices", "ggbiplot", "factoextra")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
@@ -217,11 +217,13 @@ vs_UG.s$SOURCEDB = "VitalSigns"
 xC = lapply(vs_UG.s[,c("N","P","P.T","S","B","Cu","Fe","Mn","Zn","Al","Ca","Na","Mg","K")], summary)
 names(xC) = c("N","P","P.T","S","B","Cu","Fe","Mn","Zn","Al","Ca","Na","Mg","K")
 
-## Nigeria data AfSIS II:
+## Nigeria data AfSIS II ----
 ## Markus Walsh: All the M3 values are in ppm. C&N in %, EC is in mS. All the samples are taken from 0-20 cm, compositing 4 samples per 100m^2 (see attached).
 system('7za x top_MIR_pred_long.csv.zip')
 nigeria = read.csv("top_MIR_pred_long.csv")
 nigeria.s = plyr::rename(nigeria, c("lat"="Lat", "lon"="Lon", "ssid"="PID"))
+## Predictions contain mean and upper and lower predictions intervals --- we only need the mean (plevel = 2):
+nigeria.s = nigeria.s[nigeria.s$plevel==2,]
 nigeria.s$UpDpth = 0
 nigeria.s$LowDpth = 20
 nigeria.s$Depth = 10
@@ -233,12 +235,12 @@ nigeria.s$SSN = NULL
 nigeria.s$depth = NULL
 nigeria.s$date = NULL
 nigeria.s$SOURCEDB = "AfSIS_II"
-# shape = "http://maps.google.com/mapfiles/kml/pal2/icon18.png"
-# nigeria.sp = nigeria[,c("ssid","lon","lat","pH","B")]
-# coordinates(nigeria.sp) = ~lon+lat
-# proj4string(nigeria.sp) = "+proj=longlat +datum=WGS84"
-# kml(nigeria.sp, file="samples_nigeria_B.kml", folder.name="B", colour=B, shape=shape, points_names=signif(nigeria.sp$B,3), kmz=TRUE)
-# kml(nigeria.sp, file="samples_nigeria_pH.kml", colour_scale=R_pal[["pH_pal"]], folder.name="pH", colour=pH, shape=shape, points_names=signif(nigeria.sp$pH,3), kmz=TRUE)
+shape = "http://maps.google.com/mapfiles/kml/pal2/icon18.png"
+nigeria.sp = nigeria.s[,c("PID","Lon","Lat","pH","B")]
+coordinates(nigeria.sp) = ~Lon+Lat
+proj4string(nigeria.sp) = "+proj=longlat +datum=WGS84"
+kml(nigeria.sp, file="samples_nigeria_B.kml", folder.name="B", colour=B, shape=shape, points_names=signif(nigeria.sp$B,3), kmz=TRUE)
+kml(nigeria.sp, file="samples_nigeria_pH.kml", colour_scale=R_pal[["pH_pal"]], folder.name="pH", colour=pH, shape=shape, points_names=signif(nigeria.sp$pH,3), kmz=TRUE)
 
 ## Add/rename some columns:
 AfSP01302Qry$Depth <- (AfSP01302Qry$LowDpth - AfSP01302Qry$UpDpth)/2 + AfSP01302Qry$UpDpth
@@ -247,12 +249,12 @@ summary(PBLTopsoil$Depth)
 AfSP01302Qry <- rename(AfSP01302Qry, replace=c("Y_LatDD"="Lat","X_LonDD"="Lon","LayerID"="PID","T_Year"="Year"))
 PBLTopsoil <- rename(PBLTopsoil, replace=c("Latitude"="Lat","Longitude"="Lon","ProfileID"="PID"))
 
-## merge EVERYTHING together:
+## merge EVERYTHING together ----
 nut <- plyr::rbind.fill(list(AfSP01302Qry, PBLTopsoil, af[,-which(names(af) %in% c("SSN","ICRAFPID","Site","CC"))], afALL[,-which(names(afALL) %in% c("SSN","PHIHOX","Site","xCa","xK","xNa","EXB","xN","xMg"))], et[,-which(names(et) %in% c("Woreda"))], nut.sim, nigeria.s, vs_UG.s))
 sel.rm.xy = is.na(nut$Lat)|is.na(nut$Lon)
 nut = nut[-which(sel.rm.xy),]
 str(nut)
-## 119,329 obs. of  27 variables
+## 115111 obs. of  27 variables
 #nut <- nut[,c("PID","Lat","Lon","Depth",t.vars)]
 nut$Depth <- ifelse(is.na(nut$Depth), 15, nut$Depth)
 summary(nut$Depth)

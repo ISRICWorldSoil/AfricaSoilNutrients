@@ -7,7 +7,7 @@ Summary: This repository contains R code and some outputs of spatial predictions
 
 *Please cite as:*
 
-* Hengl, T., Leenaars, J.G.B., Shepherd, K.D., Walsh, M.G, Heuvelink, G.B.M., Mamo, T. et al. (2017?) **Soil nutrient maps of Sub-Saharan Africa: assessment of soil nutrient content at 250 m spatial resolution using machine learning**. submitted to Nutrient Cycling in Agroecosystems.
+* Hengl, T., Leenaars, J.G.B., Shepherd, K.D., Walsh, M.G, Heuvelink, G.B.M., Mamo, T. et al. (2017) [**Soil nutrient maps of Sub-Saharan Africa: assessment of soil nutrient content at 250 m spatial resolution using machine learning**](https://link.springer.com/content/pdf/10.1007/s10705-017-9870-x.pdf). Nutrient Cycling in Agroecosystems, DOI: 10.1007/s10705-017-9870-x.
 
 # Download Maps
 
